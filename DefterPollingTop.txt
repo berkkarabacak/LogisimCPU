@@ -1,0 +1,16 @@
+.data
+.code
+ldi 0 0x901
+loop ld 1 0
+ldi 2 0x1
+and 1 1 2
+jz loop
+ldi 0 0x900
+ld 0 0
+loop2 add 4 4 0
+dec 0
+jz out
+jmp loop2
+out ldi 3 0xb00
+ld 3 3
+st 3 4

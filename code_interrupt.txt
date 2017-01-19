@@ -1,0 +1,29 @@
+.data
+.code
+	ldi 7 0x200
+	ldi 2 0x7f3
+	ldi 3 isr3
+	st 2 3
+	ldi 2 0x7f6
+	ldi 3 isr2
+	st 2 3
+	sti
+loop jmp loop
+isr3 cli
+	ldi 2 0xaaa
+	ldi 2 0xA00
+	ld 2 2
+	ldi 3 0xB00
+	st 3 2
+	sti
+	ldi 4 0xB00
+	iret
+isr2 cli
+	ldi 2 0xaaa
+	ldi 2 0xD23
+	ld 2 2
+	ldi 3 0xB00
+	st 3 2
+	sti
+	ldi 4 0xB00
+	iret	
